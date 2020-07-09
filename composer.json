@@ -1,0 +1,33 @@
+{
+  "name": "iszsw/mock",
+  "description": "Mock Doc",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zsw",
+      "email": "zswemail@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "doctrine/annotations": "^1.6",
+    "php-di/phpdoc-reader": "^2.1",
+    "symfony/class-loader": "~3.2.0",
+    "fzaninotto/faker": "^1.9"
+  },
+  "extra": {
+    "think":{
+      "services":[
+        "iszsw\\mock\\Service"
+      ],
+      "config":{
+        "mock": "src/config.php"
+      }
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "iszsw\\mock\\": "src"
+    }
+  }
+}
