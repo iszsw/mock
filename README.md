@@ -1,9 +1,18 @@
 # 基于 ThinkPHP6 的注解路由 + 自动接口文档生成 + 自动测试数据生成
 
+### 作者
+> zsw zswemail@qqcom
+
+> 主页  [https://zsw.ink](https://zsw.ink)
+
+> github  [https://github.com/iszsw/mock](https://github.com/iszsw/mock)
+
+> gitee  [https://gitee.com/iszsw/mock](https://gitee.com/iszsw/mock)
+
 ## 使用
 > 1、安装 
 
-```composer require iszsw/mock```
+```composer require iszsw/mock:dev-master```
 
 > 2、添加测试代码 在 app/controller 目录下增加Test.php文件
 ~~~php
@@ -60,18 +69,23 @@ class Test extends BaseController
 
 ~~~
 
-> 3、 访问路由、测试数据、接口文档
+> 3、复制文档资源文件 vendor/iszsw/mock/src/static 文件夹放置到public下
+    <br>如果路径不不是 /static 可以在config/mock.php配置文件中修改
+
+> 4、 访问
 
 ```
-路由：/test?username=zsw
+注解路由：/test?username=zsw
 
-数据：/mock?mock=1
+测试数据：/mock?mock=1
 
-文档：/wiki
+接口文档：/wiki
 ```
 
 
 ## 功能说明
+
+> 配置文件 config/mock.php
 
 ### 1、注解路由
 > 路由注解 模型注解 自动注入同Tp6官方注解
@@ -258,4 +272,5 @@ class Test
 }
 ~~~
 
-![https://wx2.sbimg.cn/2020/07/09/CQkrN.png](https://wx2.sbimg.cn/2020/07/09/CQkrN.png)
+![](https://wx2.sbimg.cn/2020/07/09/CQkrN.png)
+文档图片 https://wx2.sbimg.cn/2020/07/09/CQkrN.png

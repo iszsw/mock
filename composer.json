@@ -8,7 +8,11 @@
       "email": "zswemail@qq.com"
     }
   ],
-  "minimum-stability": "stable",
+  "keywords": [
+    "doc",
+    "mock",
+    "annotation"
+  ],
   "require": {
     "doctrine/annotations": "^1.6",
     "php-di/phpdoc-reader": "^2.1",
