@@ -1,7 +1,7 @@
 {
   "name": "iszsw/mock",
-  "description": "Mock Doc",
-  "license": "MIT",
+  "description": "根据注解自动生成 生成路由 + 生成接口文档 + Mock测试数据",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "zsw",

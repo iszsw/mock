@@ -1,18 +1,9 @@
 # 基于 ThinkPHP6 的注解路由 + 自动接口文档生成 + 自动测试数据生成
 
-### 作者
-> zsw zswemail@qqcom
-
-> 主页  [https://zsw.ink](https://zsw.ink)
-
-> github  [https://github.com/iszsw/mock](https://github.com/iszsw/mock)
-
-> gitee  [https://gitee.com/iszsw/mock](https://gitee.com/iszsw/mock)
-
 ## 使用
 > 1、安装 
 
-```composer require iszsw/mock:dev-master```
+```composer require iszsw/mock```
 
 > 2、添加测试代码 在 app/controller 目录下增加Test.php文件
 ~~~php
@@ -69,23 +60,18 @@ class Test extends BaseController
 
 ~~~
 
-> 3、复制文档资源文件 vendor/iszsw/mock/src/static 文件夹放置到public下
-    <br>如果路径不不是 /static 可以在config/mock.php配置文件中修改
-
-> 4、 访问
+> 3、 访问路由、测试数据、接口文档
 
 ```
-注解路由：/test?username=zsw
+路由：/test?username=zsw
 
-测试数据：/mock?mock=1
+数据：/mock?mock=1
 
-接口文档：/wiki
+文档：/wiki
 ```
 
 
 ## 功能说明
-
-> 配置文件 config/mock.php
 
 ### 1、注解路由
 > 路由注解 模型注解 自动注入同Tp6官方注解
@@ -97,7 +83,7 @@ class Test extends BaseController
 
 ### 2、接口测试数据生成
 
-> MockPack 嵌套数据生成支持无限级嵌套
+> MockPack 嵌套数据生成支持 无限级嵌套
 ```
 @MockPack extends MockBase
     // 数据长度 0表示单层数据
@@ -112,8 +98,11 @@ class Test extends BaseController
 ```
 例：
 ```
+// MockPack(key)  MockPack中key相同值之间组成一层嵌套
+
 /**
  * @MockPack("articles", mode="response", title="文章列表", description="文章列表", limit=3)
+ *
  * @Mock("title", mode="response", title="标题", example="name")
  * @Mock("content", mode="response", title="内容", example={"sentence": 10})
  *
@@ -272,5 +261,4 @@ class Test
 }
 ~~~
 
-![](https://wx2.sbimg.cn/2020/07/09/CQkrN.png)
-文档图片 https://wx2.sbimg.cn/2020/07/09/CQkrN.png
+![https://wx2.sbimg.cn/2020/07/09/CQkrN.png](https://wx2.sbimg.cn/2020/07/09/CQkrN.png)

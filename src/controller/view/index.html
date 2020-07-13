@@ -1,0 +1,171 @@
+<html>
+<head>
+    <title>文档</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//cdn.staticfile.org/highlight.js/10.0.3/styles/monokai-sublime.min.css">
+    <? include 'style.html' ?>
+</head>
+
+<body>
+
+<div class="container target-menu">
+    <div class="min-menu"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACjUlEQVR4Xu2ZV44UQQyG7fvwVNUH4BKIHLVarcg5hyXntIAQQoicnjkAHMCuN07BBXgzWomRSjs7pQ7u6mmV57nb4+/z76qRBqHwDxbODybAElC4AVuBwgNgh6CtgK1A4QZsBQoPgN0CtgK2AoUbsBUoPAB2Cwy6As65K4i4CQD+isiPEMLV3IkcTMB/+OUYWESWc0sYRMB68BMRuSVkF5CCH0JCVgF14HNLyCZgFryIbF6FRsTvaw/AHOuQRcAseETcSkTfVsGrqtoiIl9zS+hdQCL225n5Swzsvd8GAJ9zSuhVQCL2O0MIn9a7851zOxDxYy4JvQlIxH43EX1I/eCpqmqXiLzPIaEXAYnJ7w0hvKvza885twcR3/YtQV1AYvILRPSmDvzkmaqq9onI1Duat4OqgMTkF0MIr5vAT5713i8AwNS7WhLUBCQmv0REr9rAT95xzi0i4lQNDQkqAhJX3X5mftkFPkrCEgBM1eoqobOAROwPhhBeaMBHSTiAiM81D8ZOAhKTP8zMzzThoyQcAoAVLQmtBSTgjzLz0z7gIwlHAOCJhoRWAhIH3nEietwnfHRFHhORR10lNBaQmPxJZn6YAz5KwgkAeNBFQiMBiQPvdAjhfk746GA8hYj32kqoLSAx+bPMfHcI+CgJZwDgThsJtQQk4M8z8+0h4SMJ5wDgVlMJtQR47wkAfFwcES8S0c15gI8OxgsicmNNT7+ZecOsPusK+AkAG6Mil5n5+jzBR0m4BADXot66C5iHPzCayI76/SMiv1L/NdRKQJMvH9uzJmBsE9Pu1xKgbXRs9SwBY5uYdr+WAG2jY6tnCRjbxLT7tQRoGx1bPUvA2Cam3a8lQNvo2OoVn4B/UixWUKe4m0kAAAAASUVORK5CYII="></div>
+    <div class="menu">
+        <div class="lsm-container">
+            <div class="lsm-scroll">
+                <div class="lsm-sidebar">
+                    <ul class="app-menu-list" id="app-target-main">
+                        <? foreach($data as $k => $v){ ?>
+                        <li class="lsm-sidebar-item">
+                            <a href="javascript:;"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACgElEQVR4Xu2bvYoUQRSFv8VXUPAnNdJAwRdYA8VAxEBFEYxMhQ1kAw3UQBNBEUwMTFRQFBEDA03czGQX0QUTMxHBBzAQEzluNVbX9OxIT3VXY5+CgaGHuj9fV1Xfqjm9wMjbwsjzxwA8AkZOwFNgxgDYARwInzZj5SvwEfgE/GhjoOs+m42AK8DVTAF8AW4A9zLZy2amCYDu+rdsHuqGngGnOrLdymwTgLfAYmRtpZXljU7bgL1J/0FBSAEcBl5HAZ8BnswBQF1l81YCYjAQUgAXgZshYYE4MmfyVfc9wNMEwh1gKZP91mZSAC+A48GaQCy3tjzZsQmCFtmXwAdgS+aPnjrrwK/NckgBxPNfwV3LCECmmiBkdlEz9xNYC0+fB02O+gZQQbgd1oYuk09tay3TmlZrJQBUAWiKHQJ2AVt7InEOeBj7Kgmgj5y1nqmg2x852xeq0z+X/ncAylGF3SqwM0C4ANytgIwBgHJ9DJwOSd8Hzo8NQLyvUWV70AACgbFMAY+AaGvvKeA1wIugnwJ+DLoOcB2wQcCFULIn7fpEqI8tcJMPV4KuBP/+y+VS2KWwS2GXwi6FXQq7FHYp7L2AN0PeDXo77PMAH4j4QKROwCdCkUiyC5HU4I/EJFk7FqLMLZMrlbz8SpRVaRJfAUenbYYuAdfDjzmFkiWTl+83QZCl7xJtX54GQKIiiSWrlkMqWzr5s8CjKIgTwPNpAHRdgiK9I1A1TYv3pbNo6V9C7ZNR3wmNcpNafDfwuaXDoXfbDnyPg+zrhYnSYCSOlEhyos16Z2jeV2ZKJ/4uCLFrd/1fR0Dp4HvxP2sE9BJESScGUJL+EHx7BAzhLpSM4Tew2M1BmVcfhgAAAABJRU5ErkJggg=="><?=$v['title']?></span><i class="symbol sidebar-more"></i></a>
+                            <ul>
+                                <? foreach($v['api'] as $vv){ ?>
+                                <li><a class="frame-info" data-frame="#wiki-<?=$v['title']?>-<?=$vv['title']?>" href="javascript:;">
+                                    <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADV0lEQVR4Xu2bPWgUQRSA30u2uCYiFv4iJHBwhzvrFbFQSJEU/lQiQtKlsFGwF7QyabSxF7WxsDKFXCXaJGAqf8C7fXOXIuAhij+VKGhzmycjGzyU3M7c7czdkdly9837+ebtzJudWYRdfuEujx88AJ8BBgSiKLoMALPMfBYA9hk07UmUmb8DwCkpZaMnBRqNtF8BIcRrAJjW0JmrCCLKra2tBVsQtACEYXgPEVXvq2sJEV8x889cI/1f2er2LZsQMgGEYXgOEZ+mzswR0ZrlwP+oF0Jwpx1bEHQA3EbE68xclVJecBF8JwBEXGDmx+qeDQiZAIQQKhVnVeoT0bJrAESEURTN24IwEgAUdFsQRgaALQgjBcAGhJEDkDeEkQSQJ4SRBZAXhGEG8AsACgBwkIi+7DT99js7DDOAJgCUAeAaEd3pVn/0A2FoAURRVGXm8wBQJ6JKVgHWK4TcAIRheAwR92c5uv18bGxss16vf9hJXghxFADep883mfkBIr7M0K8q1ptp2dxKkmSx0Wisd2uTC4AoiqaZWS2Xja4kSQ43m81PXSAcB4DnAHDASPFf4c9EdMg6gGKxuKdQKFTTNYOWr8z8UEp5KUu4VCpNBEGwjIgn1ceRLPl/VpCtOI6nrAMwccqFrBBCvQZLALBGRHMeQBcCuYwBLnrVxIbPAP8K+DHAD4LOZwHTSlB3UGPmr6Z7As4HwV4rQV0IiHgijuM3uvLOAVQqlSPtdnsdESd1ndSVY+ZWEAQztVrto24b5wB0HXMl5wH4OsDXAb4OcF4HuBrgdOz4QXAQg2BaDE3o9JCJDCL+MCmClG7nGVAulyeDIHhnEpiJbLvdntrY2GjpthkIgPHx8VVblWCSJHNDDUC3Z1zJOc8AV4Hp2vEABjEL6PaOCzmfAT4D/GLIL4b8YsjvDfrNUb877LfHczofcAMAbgHAChEtuKjk+rUhhFDH6+d1TrjrnA84AwDPlFPq7H4cxyv9OmizfUcZrMxcJKInfZ0QSb+wvACAmVSR+mWmxszfbAZiqhsRRXqs7nTa9i4RXc3Sk5kB2wo60ipL58CfM/N9KeUVHUe0AaSZsKjSKj0NtlfHgEOZt4io/md6ZPIN0QiAw2CcmfIAnKEeUkO7PgN+A1z9Em4fTsmnAAAAAElFTkSuQmCC"><?=$vv['title']?></span>
+                                </a></li>
+                                <? } ?>
+                            </ul>
+                        </li>
+                        <? } ?>
+                        <li class="lsm-sidebar-item">
+                            <a href="javascript:;"><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACgElEQVR4Xu2bvYoUQRSFv8VXUPAnNdJAwRdYA8VAxEBFEYxMhQ1kAw3UQBNBEUwMTFRQFBEDA03czGQX0QUTMxHBBzAQEzluNVbX9OxIT3VXY5+CgaGHuj9fV1Xfqjm9wMjbwsjzxwA8AkZOwFNgxgDYARwInzZj5SvwEfgE/GhjoOs+m42AK8DVTAF8AW4A9zLZy2amCYDu+rdsHuqGngGnOrLdymwTgLfAYmRtpZXljU7bgL1J/0FBSAEcBl5HAZ8BnswBQF1l81YCYjAQUgAXgZshYYE4MmfyVfc9wNMEwh1gKZP91mZSAC+A48GaQCy3tjzZsQmCFtmXwAdgS+aPnjrrwK/NckgBxPNfwV3LCECmmiBkdlEz9xNYC0+fB02O+gZQQbgd1oYuk09tay3TmlZrJQBUAWiKHQJ2AVt7InEOeBj7Kgmgj5y1nqmg2x852xeq0z+X/ncAylGF3SqwM0C4ANytgIwBgHJ9DJwOSd8Hzo8NQLyvUWV70AACgbFMAY+AaGvvKeA1wIugnwJ+DLoOcB2wQcCFULIn7fpEqI8tcJMPV4KuBP/+y+VS2KWwS2GXwi6FXQq7FHYp7L2AN0PeDXo77PMAH4j4QKROwCdCkUiyC5HU4I/EJFk7FqLMLZMrlbz8SpRVaRJfAUenbYYuAdfDjzmFkiWTl+83QZCl7xJtX54GQKIiiSWrlkMqWzr5s8CjKIgTwPNpAHRdgiK9I1A1TYv3pbNo6V9C7ZNR3wmNcpNafDfwuaXDoXfbDnyPg+zrhYnSYCSOlEhyos16Z2jeV2ZKJ/4uCLFrd/1fR0Dp4HvxP2sE9BJESScGUJL+EHx7BAzhLpSM4Tew2M1BmVcfhgAAAABJRU5ErkJggg==">公共</span><i class="symbol sidebar-more"></i></a>
+                            <ul>
+                                <li><a class="frame-info" data-frame="#wiki-公共-Mock" href="javascript:;">
+                                    <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADV0lEQVR4Xu2bPWgUQRSA30u2uCYiFv4iJHBwhzvrFbFQSJEU/lQiQtKlsFGwF7QyabSxF7WxsDKFXCXaJGAqf8C7fXOXIuAhij+VKGhzmycjGzyU3M7c7czdkdly9837+ebtzJudWYRdfuEujx88AJ8BBgSiKLoMALPMfBYA9hk07UmUmb8DwCkpZaMnBRqNtF8BIcRrAJjW0JmrCCLKra2tBVsQtACEYXgPEVXvq2sJEV8x889cI/1f2er2LZsQMgGEYXgOEZ+mzswR0ZrlwP+oF0Jwpx1bEHQA3EbE68xclVJecBF8JwBEXGDmx+qeDQiZAIQQKhVnVeoT0bJrAESEURTN24IwEgAUdFsQRgaALQgjBcAGhJEDkDeEkQSQJ4SRBZAXhGEG8AsACgBwkIi+7DT99js7DDOAJgCUAeAaEd3pVn/0A2FoAURRVGXm8wBQJ6JKVgHWK4TcAIRheAwR92c5uv18bGxss16vf9hJXghxFADep883mfkBIr7M0K8q1ptp2dxKkmSx0Wisd2uTC4AoiqaZWS2Xja4kSQ43m81PXSAcB4DnAHDASPFf4c9EdMg6gGKxuKdQKFTTNYOWr8z8UEp5KUu4VCpNBEGwjIgn1ceRLPl/VpCtOI6nrAMwccqFrBBCvQZLALBGRHMeQBcCuYwBLnrVxIbPAP8K+DHAD4LOZwHTSlB3UGPmr6Z7As4HwV4rQV0IiHgijuM3uvLOAVQqlSPtdnsdESd1ndSVY+ZWEAQztVrto24b5wB0HXMl5wH4OsDXAb4OcF4HuBrgdOz4QXAQg2BaDE3o9JCJDCL+MCmClG7nGVAulyeDIHhnEpiJbLvdntrY2GjpthkIgPHx8VVblWCSJHNDDUC3Z1zJOc8AV4Hp2vEABjEL6PaOCzmfAT4D/GLIL4b8YsjvDfrNUb877LfHczofcAMAbgHAChEtuKjk+rUhhFDH6+d1TrjrnA84AwDPlFPq7H4cxyv9OmizfUcZrMxcJKInfZ0QSb+wvACAmVSR+mWmxszfbAZiqhsRRXqs7nTa9i4RXc3Sk5kB2wo60ipL58CfM/N9KeUVHUe0AaSZsKjSKj0NtlfHgEOZt4io/md6ZPIN0QiAw2CcmfIAnKEeUkO7PgN+A1z9Em4fTsmnAAAAAElFTkSuQmCC">Mock</span>
+                                </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="frame">
+
+        <? foreach($data as $v){ ?>
+        <? foreach($v['api'] as $vv){ ?>
+        <div id="wiki-<?=$v['title']?>-<?=$vv['title']?>" class="hide frame-list">
+            <div class="title"><?=$vv['title']?></div>
+
+            <div class="label-title">描述：</div>
+            <div class="info"><?=$vv['description']?></div>
+
+            <div class="label-title">URL：</div>
+            <div class="info"><button class="btn btn-min"><?=$vv['method']?></button> /<?=$vv['rule']?></div>
+
+            <div class="label-title">请求参数：</div>
+            <div class="info">
+                <div class="table-box">
+                    <table class="table" cellspacing="0">
+                        <? include 'thead.html' ?>
+                        <tbody>
+                        <? foreach($vv['mock']['request'] as $f){ ?>
+                        <tr>
+                            <td><?=$f["field"]?></td>
+                            <td><?=$f["title"]?></td>
+                            <td><?=$f["type"]?></td>
+                            <td><?=$f['require'] ? "√" : ""?></td>
+                            <td><?=$f["example"]?></td>
+                            <td><?=$f["description"]?></td>
+                        </tr>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <? if($vv['mock']['request_ext'] ?? false) { ?>
+            <? foreach($vv['mock']['request_ext'] as $ext_key => $ext_val){ ?>
+
+            <div class="label-title">请求参数[<?=$ext_key?>]：</div>
+            <div class="info">
+                <div class="table-box">
+                    <table class="table" cellspacing="0">
+                        <? include 'thead.html' ?>
+                        <tbody>
+                        <? foreach($ext_val as $ext){ ?>
+                        <tr>
+                            <td><?=$ext["field"]?></td>
+                            <td><?=$ext["title"]?></td>
+                            <td><?=$ext["type"]?></td>
+                            <td><?=$ext['require'] ? "√" : ""?></td>
+                            <td><?=$ext["example"]?></td>
+                            <td><?=$ext["description"]?></td>
+                        </tr>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <? } ?>
+            <? } ?>
+
+            <div class="label-title">返回参数:</div>
+            <div class="info">
+                <div class="table-box">
+                    <table class="table">
+                        <? include 'thead.html' ?>
+                        <tbody>
+                        <? foreach($vv['mock']['response'] as $f){ ?>
+                        <tr>
+                            <td><?=$f["field"]?></td>
+                            <td><?=$f["title"]?></td>
+                            <td><?=$f["type"]?></td>
+                            <td><?=$f['require'] ? "√" : ""?></td>
+                            <td><?=$f["example"]?></td>
+                            <td><?=$f["description"]?></td>
+                        </tr>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <? if($vv['mock']['response_ext'] ?? false) { ?>
+            <? foreach($vv['mock']['response_ext'] as $ext_key => $ext_val){ ?>
+
+            <div class="label-title">返回参数[<?=$ext_key?>]：</div>
+            <div class="info">
+                <div class="table-box">
+                    <table class="table" cellspacing="0">
+                        <? include 'thead.html' ?>
+                        <tbody>
+                        <? foreach($ext_val as $ext){ ?>
+                        <tr>
+                            <td><?=$ext["field"]?></td>
+                            <td><?=$ext["title"]?></td>
+                            <td><?=$ext["type"]?></td>
+                            <td><?=$ext['require'] ? "√" : ""?></td>
+                            <td><?=$ext["example"]?></td>
+                            <td><?=$ext["description"]?></td>
+                        </tr>
+                        <? } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <? } ?>
+            <? } ?>
+        </div>
+        <? } ?>
+        <? } ?>
+        <div id="wiki-公共-Mock" class="hide frame-list">
+            <? include 'mock.html' ?>
+        </div>
+    </div>
+
+    <div class="fixed">
+        <p class="go-top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAB0UlEQVR4Xu2YsU7DQAyGr3kANl6AgQGmKFGywiPQgRHxZuxMiBeAF7AyNQMSK0+QoUN0QZESqYra9Hpn+yydO+ds/59/n0/dmMR/m8T1GwWgDkicgI5A4gbQS1BHQEcgcQI6AokbQLeAjoCOQOIEdAQSN4BugWgjkOf5XZZl78aYvbX2pWmaNoYbowA4EH8/id5Za59jQGAHcET83PgoEFgBrIiPBoENgIP4KBBYAFwgnh0COQAP8awQSAE4iN9NaudtsNyE5BcjGQAX8ePqGxVP74EoEEgAuIqf9/6l32M+mNAB+IrxPRcKAxVAqIjQ8z4w0ABgFY8VxxUGCgDsorHjrcEIBkBVLFXcJYwgANRFUscfYXgD4ChuLJA6jzeAoijejDGvJ+YL9QXnAOEDAJ5cL77D70IAfBljHo4kRRU/xz8D4RsAHiUAIBHvAEEEAFLxZyBEB8AifgVCVACs4k9A4AdQluXnMAw3sf7NXazIHwDYsl6CVVXddl3317Zt55MY60xd11d9318DwK9PTO816JNM4hkFILErnDWpAzhpS8ylDpDYFc6a1AGctCXmUgdI7ApnTeoATtoSc6kDJHaFsyZ1ACdtibnUARK7wlnTP6wjWlArYJLHAAAAAElFTkSuQmCC"></p>
+    </div>
+
+</div>
+
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="//cdn.staticfile.org/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+<script type="text/javascript" src="//cdn.staticfile.org/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<? include 'script.html' ?>
+
+</body>
+</html>

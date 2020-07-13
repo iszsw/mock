@@ -34,7 +34,7 @@ class Middleware
         }
 
         $this->app->config->set(['type' => 'console'], 'trace');
-        return json($data);
+        return $data;
 
     }
 
