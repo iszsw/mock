@@ -2,9 +2,9 @@
 
 主页  [https://www.zsw.ink](https://www.zsw.ink)
 
-github  [https://github.com/iszsw/surface](https://github.com/iszsw/surface)
+github  [https://github.com/iszsw/mock](https://github.com/iszsw/mock)
 
-gitee   [https://gitee.com/iszsw/surface](https://gitee.com/iszsw/surface)
+gitee   [https://gitee.com/iszsw/mock](https://gitee.com/iszsw/mock)
 
 ## 使用
 > 1、安装 
