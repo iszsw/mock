@@ -1,3 +1,17 @@
+## 演示
+
+接口文档地址： http://demo.mock.zsw.ink/
+
+**测试**
+
+请求方式：post
+
+请求参数：{username:"zsw"}
+
+接口地址：http://demo.mi.zsw.ink/show
+
+Mock地址：http://demo.mi.zsw.ink/show?m=1
+
 # 基于 ThinkPHP6 的注解路由 + 自动接口文档生成 + 自动测试数据生成
 
 主页  [https://www.zsw.ink](https://www.zsw.ink)
