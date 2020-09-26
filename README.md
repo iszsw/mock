@@ -1,6 +1,8 @@
-## 演示
+# 基于 ThinkPHP6 的注解路由 + 自动接口文档生成 + 自动测试数据生成
 
-接口文档地址： http://demo.mock.zsw.ink/
+#### 演示
+
+>  http://demo.mock.zsw.ink/
 
 **测试**
 
@@ -12,21 +14,29 @@
 
 Mock地址：http://demo.mi.zsw.ink/show?m=1
 
-# 基于 ThinkPHP6 的注解路由 + 自动接口文档生成 + 自动测试数据生成
 
-主页  [https://www.zsw.ink](https://www.zsw.ink)
+#### 地址
 
-github  [https://github.com/iszsw/mock](https://github.com/iszsw/mock)
+> **邮件** zswemail@qqcom
 
-gitee   [https://gitee.com/iszsw/mock](https://gitee.com/iszsw/mock)
+> **主页**  [https://zsw.ink](https://zsw.ink) 查看手册，留言
 
-## 使用
-> 1、安装 
+> **github**  [https://github.com/iszsw/mock](https://github.com/iszsw/mock)
 
-```composer require iszsw/mock```
+> **gitee**  [https://gitee.com/iszsw/mock](https://gitee.com/iszsw/mock)
 
-> 2、添加测试代码 在 app/controller 目录下增加Test.php文件
-~~~php
+
+
+#### 使用
+1. 安装 
+
+```shell
+composer require iszsw/mock
+```
+
+2. 添加测试代码 在 app/controller 目录下增加Test.php文件
+
+```php
 <?php
 namespace app\controller;
 
@@ -78,33 +88,43 @@ class Test extends BaseController
     public function mock(){}
 }
 
-~~~
-
-> 3、 访问路由、测试数据、接口文档
-
-```
-路由：/test?username=zsw
-
-数据：/mock?mock=1
-
-文档：/wiki
 ```
 
+3. 访问路由、测试数据、接口文档
 
-## 功能说明
+**路由**：/test?username=zsw
 
-### 1、注解路由
+**数据**：/mock?mock=1
+
+**文档**：/wiki
+
+
+
+#### 功能说明
+
+1. 注解路由
+
 > 路由注解 模型注解 自动注入同Tp6官方注解
 
-> 新增AutoValidate注解
-~~~php
+```php
+// 新增AutoValidate注解
 @AutoValidate({"username":"require|chsAlpha"}, message={"username":"请输入用户名"})
-~~~
-
-### 2、接口测试数据生成
-
-> MockPack 嵌套数据生成支持 无限级嵌套
 ```
+
+2. Mock 测试数据生成
+
+> Mock 用法 
+
+```php
+// example可以自定义数据也可以使用生成器Mock测试数据 传入方法名即可 数据生成参考 https://github.com/fzaninotto/Faker
+
+@Mock("title", mode="response", title="标题", example="name")
+
+```
+
+> MockPack 嵌套数据生成 类属于多层数组 支持无限级嵌套
+
+```php
 @MockPack extends MockBase
     // 数据长度 0表示单层数据
     @var int limit 
@@ -115,9 +135,8 @@ class Test extends BaseController
      * true：[["a"=>"b"], ["aa"=>"bb"]]
      */
     @var boolean main
-```
-例：
-```
+
+// 举个例子：
 // MockPack(key)  MockPack中key相同值之间组成一层嵌套
 
 /**
@@ -133,8 +152,7 @@ class Test extends BaseController
  * @MockPack("articles")
  */
  
-生成结果
-
+//生成结果
 {
 	"articles": [{
 		"title": "乔阳",
@@ -156,23 +174,15 @@ class Test extends BaseController
 		}
 	}]
 }
+
 ```
 
-> Mock 数据生成
-```
-@Mock extends MockBase
-    /**
-      * 自定义字符串 example="zsw"
-      * Faker方法名 参考https://github.com/fzaninotto/Faker
-      * 自定义方法名 \app\logic\Mock::name
-      * example="方法名" || example={"方法名": {"参数1", "参数2"}}
-      */
-    @var string|array example
-```
-
-### 3、接口文档生成
+3. 接口文档生成
 
 ```php
+// @WikiMenu 分类名
+// @WikiItem 菜单
+
 <?php
 /**
  * @WikiMenu("测试")
@@ -191,12 +201,13 @@ class Test extends BaseController
 ```
 
 
-## 使用参考
+#### 示例
 
-### 1、注解路由
+1. composer引入
 
-### 2、接口测试数据生成
-~~~php
+2. 请在app\controller 目录下 添加测试文件 Test.php 
+
+```php
 <?php
 namespace app\controller;
 
@@ -229,10 +240,12 @@ class Test extends BaseController
      */
     public function mock(){}
 }
-~~~
+```
 
-生成的数据格式为
+3. 访问地址 /mock?mock=1
+
 ```json
+// 生成的数据格式为
 {
 	"articles": [{
 		"title": "乔阳",
@@ -256,8 +269,9 @@ class Test extends BaseController
 }
 ```
 
-### 3、接口文档生成
-~~~php
+4. 接口文档生成
+
+```php
 <?php
 namespace app\controller;
 
@@ -279,6 +293,6 @@ class Test
      */
     public function index($username){}
 }
-~~~
+```
 
-![https://wx2.sbimg.cn/2020/07/09/CQkrN.png](https://wx2.sbimg.cn/2020/07/09/CQkrN.png)
+![https://s.zsw.ink/mock/apidoc01.png](https://s.zsw.ink/mock/apidoc01.png)
