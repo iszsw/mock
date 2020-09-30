@@ -17,7 +17,8 @@
     "doctrine/annotations": "^1.6",
     "php-di/phpdoc-reader": "^2.1",
     "symfony/class-loader": "~3.2.0",
-    "fzaninotto/faker": "^1.9"
+    "fzaninotto/faker": "^1.9",
+    "topthink/think-view": "^1.0"
   },
   "extra": {
     "think":{
