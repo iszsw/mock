@@ -5,6 +5,7 @@ namespace iszsw\mock\middleware\relation;
 use iszsw\mock\annotation\illustrate\MockBase;
 use iszsw\mock\annotation\traits\ParseMock;
 use think\Request;
+use think\Response;
 
 /**
  * 启用mock数据生成工具
@@ -41,12 +42,19 @@ trait WithMock
         return true;
     }
 
-    private function format(array $data): array
+    private function format(array $data): Response
     {
-        $content = $this->app->config->get('mock.mock.format', '');
-        $data = json_encode($data, JSON_UNESCAPED_UNICODE);
-        $content = $content ? str_replace('{data}', $data, $content): $data;
-        return json_decode($content, true);
+        $format = $this->app->config->get('mock.mock.format', '');
+        if (
+            $format instanceof \Closure ||
+            ( is_string($format) && function_exists($format) ) ||
+            ( is_array($format) && method_exists( $format[0], $format[1] ?? 'format') )
+        ) {
+            $data = call_user_func($format, $data);
+        }else{
+            $data = json($data);
+        }
+        return $data;
     }
 
     private function generateMock($dataMock): array
