@@ -295,4 +295,4 @@ class Test
 }
 ```
 
-![https://s.zsw.ink/mock/apidoc01.png](https://s.zsw.ink/mock/apidoc01.png)
+![https://s3.ax1x.com/2021/03/03/6Ak3WV.png](https://s3.ax1x.com/2021/03/03/6Ak3WV.png)
